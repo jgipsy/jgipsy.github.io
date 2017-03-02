@@ -1,9 +1,9 @@
 {
   "private": true,
   "name": "jhypsy",
-  "homepage": "https://angelmp01.github.io/jgypsy/",
+  "homepage": "https://jgipsy.github.io",
   "twitter": "angelmp01",
-  "repository": "https://github.com/angelmp01/jgypsy.git",
+  "repository": "git@github.com:jgipsy/jgipsy.github.io.git",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",

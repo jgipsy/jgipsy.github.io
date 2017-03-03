@@ -1,5 +1,5 @@
 ---
-title: Jgypsy
+title: Jgipsy
 layout: Homepage
 ---
 

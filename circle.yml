@@ -1,3 +1,12 @@
+machine:
+  node:
+    - version 4.2.0
+checkout:
+  post:
+    - git clone git@github.com:jgipsy/jgipsy.github.io.git
+dependencies:
+  override:
+    - npm install
 compile:
   override:
     - npm run build

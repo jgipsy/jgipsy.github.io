@@ -1,4 +1,4 @@
-dependencies:
+compile:
   override:
     - npm run build
     - npm run deploy

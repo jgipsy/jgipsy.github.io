@@ -2,8 +2,8 @@
   "private": true,
   "name": "jgipsy",
   "homepage": "https://jgipsy.github.io",
-  "twitter": "angelmp01",
-  "repository": "git@github.com:jgipsy/jgipsy.github.io.git",
+  "twitter": "JBcnGipsy",
+  "repository": "https://github.com/jgipsy",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",
@@ -16,6 +16,7 @@
     "deploy": "./scripts/deploy.sh"
   },
   "phenomic": {
+    "assets": "assets",
     "CNAME": false
   },
   "#babel": "webpack-(development|production) are useful for webpack 2, otherwise use development|production",

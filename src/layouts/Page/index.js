@@ -60,7 +60,7 @@ const Page = (
         <div
           className={ styles.hero }
           style={ head.hero && {
-            background: `#111 url(${ head.hero }) 50% 50% / cover`,
+            background: `#de9999 url(${ head.hero }) 50% 50% / cover`,
           } }
         >
           <div className={ styles.header }>

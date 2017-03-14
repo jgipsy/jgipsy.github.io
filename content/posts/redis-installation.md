@@ -39,8 +39,8 @@ slave-priority 1
 
 ```shell
 bind <APP_SERVER_1_IP>
-sentinel monitor bonpreu <APP_SERVER_1_IP> 6379 2  
-sentinel down-after-milliseconds bonpreu 6000 
+sentinel monitor redismaster <APP_SERVER_1_IP> 6379 2  
+sentinel down-after-milliseconds redismaster 6000 
 daemonize yes
 loglevel verbose
 logfile "/var/log/sentinel.log"
@@ -129,7 +129,7 @@ case "$1" in
 esac
 ```
 
-# Install redis in another host 172.20.16.2
+# Install redis in another host <APP_SERVER_2_IP>
 
 ```shell
 wget http://download.redis.io/releases/redis-3.2.8.tar.gz
@@ -164,8 +164,8 @@ slaveof <APP_SERVER_1_IP> 6379
 
 ```shell
 bind <APP_SERVER_2_IP>
-sentinel monitor bonpreu <APP_SERVER_2_IP> 6379 2  
-sentinel down-after-milliseconds bonpreu 6000
+sentinel monitor redismaster <APP_SERVER_2_IP> 6379 2  
+sentinel down-after-milliseconds redismaster 6000
 ```
 
 # Start sentinel
@@ -190,7 +190,7 @@ sudo ./install_server.sh
 
 ```shell
 bind <APP_SERVER_3_IP>
-sentinel monitor bonpreu <APP_SERVER_3_IP> 6379 2
+sentinel monitor redismaster <APP_SERVER_3_IP> 6379 2
 ```
 
 # Start sentinel
@@ -207,7 +207,7 @@ sudo ./install_server.sh
 ```shell
 7137:S 14 Mar 08:22:14.347 * Retrying with SYNC...
 7137:S 14 Mar 08:22:14.347 # MASTER aborted replication with an error: ERR Can't SYNC while not connected with my master
-7137:S 14 Mar 08:22:15.348 * Connecting to MASTER 172.20.15.211:6379
+7137:S 14 Mar 08:22:15.348 * Connecting to MASTER <APP_SERVER_1_IP>:6379
 7137:S 14 Mar 08:22:15.349 * MASTER <-> SLAVE sync started
 7137:S 14 Mar 08:22:15.349 * Non blocking connect for SYNC fired the event.
 7137:S 14 Mar 08:22:15.350 * Master replied to PING, replication can continue...

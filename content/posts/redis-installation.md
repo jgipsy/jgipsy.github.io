@@ -18,21 +18,26 @@ sudo ./install_server.sh
 
 # Fill form
 
+```
 Port           : 6379
 Config file    : /etc/redis/redis_6379.conf
 Log file       : /var/log/redis_6379.log
 Data dir       : /var/lib/redis/6379
 Executable     : /home/vagrant/redis-3.2.8/src/redis-server
 Cli Executable : /home/vagrant/redis-3.2.8/src/redis-clii
+```
 
 # Configure redis_6379.conf with next configuration
 
+```
 bind <APP_SERVER_1_IP> 127.0.0.1
 port 6379
 slave-priority 1
+```
 
 # Create sentinel.conf file
 
+```
 bind <APP_SERVER_1_IP>
 sentinel monitor bonpreu <APP_SERVER_1_IP> 6379 2  
 sentinel down-after-milliseconds bonpreu 6000 
@@ -40,18 +45,21 @@ daemonize yes
 loglevel verbose
 logfile "/var/log/sentinel.log"
 pidfile "/var/run/redis_26379.pid"
+```
 
 # Start sentinel
 
+```
 sudo ./install_server.sh
 /*nohup ./redis-server /home/vagrant/redis-3.2.8/utils/sentinel.conf --sentinel &*/
+```
 
 # Change /etc/init.d/redis_26379
 
+```shell
 #!/bin/sh
 #Configurations injected by install_server below....
 
-```shell
 EXEC=/home/vagrant/redis-3.2.8/src/redis-server
 CLIEXEC=/home/vagrant/redis-3.2.8/src/redis-cli
 PIDFILE=/var/run/redis_26379.pid
@@ -134,30 +142,38 @@ sudo ./install_server.sh
 
 # Fill form
 
+```
 Port           : 6379
 Config file    : /etc/redis/6379.conf
 Log file       : /var/log/redis_6379.log
 Data dir       : /var/lib/redis/6379
 Executable     : /home/vagrant/redis-3.2.8/src/redis-server
 Cli Executable : /home/vagrant/redis-3.2.8/src/redis-cli
+```
 
 # Configure redis_6379.conf with next configuration
 
+```
 bind <APP_SERVER_2_IP>
 port 6379
 slave-priority 10
 slaveof <APP_SERVER_1_IP> 6379
+```
 
 # Create sentinel.conf file
 
+```
 bind <APP_SERVER_2_IP>
 sentinel monitor bonpreu <APP_SERVER_2_IP> 6379 2  
 sentinel down-after-milliseconds bonpreu 6000
+```
 
 # Start sentinel
 
+```
 sudo ./install_server.sh
 /*nohup ./redis-server /etc/redis/sentinel.conf --sentinel &*/
+```
 
 # Install sentinel in a host <APP_SERVER_3_IP>
 
@@ -172,12 +188,17 @@ sudo ./install_server.sh
 
 # Configure sentinel.conf
 
+```
 bind <APP_SERVER_3_IP>
 sentinel monitor bonpreu <APP_SERVER_3_IP> 6379 2
+```
 
 # Start sentinel
 
-nohup ./redis-server /home/vagrant/redis-3.2.8/sentinel.conf --sentinel &
+```
+sudo ./install_server.sh
+/*nohup ./redis-server /home/vagrant/redis-3.2.8/sentinel.conf --sentinel &*/
+```
 
 # Knowed bugs
 

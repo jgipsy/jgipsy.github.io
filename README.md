@@ -5,3 +5,5 @@
 https://www.youtube.com/watch?v=hrXYY3aeVlk
 
 After long years of hard work in cutting edge computer science scence, we detect that gypsy philosophy always worked
+
+SEE: https://theduke.at/blog/develop/how-to-use-google-analytics-with-phenomic/

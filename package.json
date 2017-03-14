@@ -1,4 +1,5 @@
 {
+  "googleAnalytics": "UA-93147523-1",
   "private": true,
   "name": "jgipsy",
   "homepage": "https://jgipsy.github.io",
@@ -133,5 +134,8 @@
     "webpack": "^1.11.0",
     "whatwg-fetch": "^0.11.0",
     "phenomic": "^0.20.4"
+  },
+  "dependencies": {
+    "react-ga": "^2.1.2"
   }
 }

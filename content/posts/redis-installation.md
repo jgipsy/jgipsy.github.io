@@ -5,6 +5,8 @@ layout: Post
 hero: ../../assets/hands.svg
 ---
 
+Cookbook to install redis in high availability in master-slave tipology
+
 # Install redis in a host <APP_SERVER_1_IP>
 
 ```shell

@@ -57,7 +57,7 @@ Unmount apj13 path for publish liferay theme images.
     JkUnMount /liferay-theme/images/* worker1
 ```
 
-Create alias for liferay-theme/images
+Create alias in httpd.conf for liferay-theme/images
 
 ```
 Alias /bonpreu-theme/ "/var/www/bonpreu-theme/"

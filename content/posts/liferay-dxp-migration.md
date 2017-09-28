@@ -44,6 +44,15 @@ jdbc.default.url=jdbc:mysql://172.17.0.3:3306/bonpreudb?useUnicode=true&characte
 jdbc.default.username=bonpreuext
 jdbc.default.password=bonpreuext
 ```
+# Download Liferay 6.2 src and unpackage into workspace and change name folder to portal-master
+# Execute ant jar in portal-master root folder
+
+# Change to Liferay Plugins Perspective
+# In every Java project right-click over project and select Liferay > Convert to Liferay Plugin Project
+# Now, every Eclipse Java error disapear!!
+
+
+# Clone Liferay 6.2.10 project SDK Workspace
 
 
 

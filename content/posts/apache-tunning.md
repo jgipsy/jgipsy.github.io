@@ -60,9 +60,9 @@ Unmount apj13 path for publish liferay theme images.
 Create alias in httpd.conf for liferay-theme/images
 
 ```
-Alias /bonpreu-theme/ "/var/www/bonpreu-theme/"
+Alias /theme/ "/var/www/theme/"
 
-<Directory "/var/www/bonpreu-theme/">
+<Directory "/var/www/theme/">
     Options Indexes MultiViews FollowSymLinks
     AllowOverride None
     Order allow,deny
@@ -70,10 +70,10 @@ Alias /bonpreu-theme/ "/var/www/bonpreu-theme/"
 </Directory>
 
 ```
-Copy bundle deployed liferay theme images into /var/www/bonpreu-theme
+Copy bundle deployed liferay theme images into /var/www/theme
 
 ```
-cp -r /opt/liferay/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/webapps/bonpreu-theme/* /var/www/bonpreu-theme
+cp -r /opt/liferay/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/webapps/theme/* /var/www/theme
 ```
 
 Restart apache
